@@ -1,0 +1,14 @@
+
+
+input.text {
+	font-size: 3em;
+}
+
+
+.labelinput {
+	color: #888;
+}
+
+.labelinput.focus {
+	color: #ddd;
+}
