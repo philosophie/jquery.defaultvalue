@@ -39,7 +39,7 @@
 			'border-color': 'transparent',
 			'box-shadow': 'none'
 		});
-		$newInput.addClass('labelinput');
+		$newInput.addClass('defaultvalue_label');
 		$newInput.removeAttr('name').removeAttr('id');
 		$newInput.val(labelText);
 		
@@ -47,12 +47,15 @@
 		// When the user focuses on our label input
 		$newInput.focus(function() {
 			
+			$newInput.addClass('defaultvalue_label_focus');
 			$input.focus();
 			
 		});
 		
-		// When our real input loses focus
+		// When our real input receives focus
 		$input.focus(function() {
+			
+			$newInput.addClass('defaultvalue_label_focus');
 			
 			interval = setInterval(function() {
 				if ($input.val() != '') {
@@ -67,6 +70,7 @@
 		}).blur(function() {
 			
 			clearInterval(interval);
+			$newInput.removeClass('defaultvalue_label_focus');
 			
 		});
 		
