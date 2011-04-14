@@ -12,7 +12,8 @@
 		// Default options
 		var defaults = {
 			'labelText': $label.text(),
-			'hideLabel': true
+			'hideLabel': true,
+			'clearOnFocus': false
 		};
 		
 		// Allow user to override default options
@@ -67,12 +68,13 @@
 			
 		}).bind('keyup', function() {
 			
-			if ($input.val() == '') $newInput.show();
+			if ($input.val() == '' && options['clearOnFocus'] == false) $newInput.show();
 			
 		}).focus(function() {
 			
 			// When our real input receives focus
 			$newInput.addClass('defaultvalue_label_focus');
+			if (options['clearOnFocus'] == true) $newInput.hide();
 			
 		}).blur(function() {
 			

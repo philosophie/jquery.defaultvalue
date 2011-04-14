@@ -6,7 +6,8 @@ $(function() {
 	});
 	$('#myinput2').defaultValue({
 		labelText: 'Phone number',
-		hideLabel: false
+		hideLabel: false,
+		clearOnFocus: true
 	});
 	
 });
