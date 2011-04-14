@@ -1,6 +1,12 @@
 $(function() {
 	
-	$('#myinput').defaultValue("Friend's name");
-	$('#myinput2').defaultValue("Phone number");
+	$('#myinput').defaultValue({
+		labelText: 'A label',
+		hideLabel: false
+	});
+	$('#myinput2').defaultValue({
+		labelText: 'Phone number',
+		hideLabel: false
+	});
 	
 });

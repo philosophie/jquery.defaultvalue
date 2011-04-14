@@ -1,24 +1,28 @@
 (function ($) {	
 	
-	$.fn.defaultValue = function (defaultLabel) {
+	$.fn.defaultValue = function (options) {
 		
 		var $input = $(this);
-		
 		var interval;
 		
 		// Find the label
 		$label = $("[for='" + $input.attr('id') + "']");
 		
-		// Hide the label
-		if ($label.length > 0) $label.hide();
 		
-		// Determine what to use as the default value for this input
-		if (defaultLabel == undefined) {
-			// Find the input's label
-			labelText = $label.text();
-		} else {
-			labelText = defaultLabel;
-		}
+		// Default options
+		var defaults = {
+			'labelText': $label.text(),
+			'hideLabel': true
+		};
+		
+		// Allow user to override default options
+		options = $.extend({}, defaults, options);
+		
+		console.log(options);
+		
+		// Hide the label
+		if ($label.length > 0 && options['hideLabel'] == true) $label.hide();
+		
 		
 		// Wrap the input with a container div
 		$wrapper = $('<div></div>');
@@ -41,7 +45,7 @@
 		});
 		$newInput.addClass('defaultvalue_label');
 		$newInput.removeAttr('name').removeAttr('id');
-		$newInput.val(labelText);
+		$newInput.val(options['labelText']);
 		$newInput.attr('tabindex','-1');
 		
 		
