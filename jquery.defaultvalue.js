@@ -2,7 +2,7 @@
 	
 	$.fn.defaultValue = function (defaultLabel) {
 		
-		$input = $(this);
+		var $input = $(this);
 		
 		var interval;
 		
@@ -29,7 +29,7 @@
 		$input.wrap($wrapper);
 		
 		
-		$newInput = $input.clone();
+		var $newInput = $input.clone();
 		$newInput.css({
 			'position': 'absolute',
 			'top': 0,
