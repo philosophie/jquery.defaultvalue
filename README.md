@@ -4,7 +4,7 @@ A proper implementation of input placeholder text, or as I like to call them: de
 
 ## Simple Usage
 
-$('#someTextInput).defaultValue();
+	$('#someTextInput).defaultValue();
 
 ## Options
 
