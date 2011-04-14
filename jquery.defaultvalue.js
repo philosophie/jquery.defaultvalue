@@ -42,6 +42,7 @@
 		$newInput.addClass('defaultvalue_label');
 		$newInput.removeAttr('name').removeAttr('id');
 		$newInput.val(labelText);
+		$newInput.attr('tabindex','-1');
 		
 		
 		// When the user focuses on our label input
@@ -52,27 +53,28 @@
 			
 		});
 		
-		// When our real input receives focus
-		$input.focus(function() {
+		
+		// Listen for keypress and paste events
+		$input.bind('keypress paste', function() {
 			
+			$newInput.hide();
+			
+		}).bind('keyup', function() {
+			
+			if ($input.val() == '') $newInput.show();
+			
+		}).focus(function() {
+			
+			// When our real input receives focus
 			$newInput.addClass('defaultvalue_label_focus');
-			
-			interval = setInterval(function() {
-				if ($input.val() != '') {
-					// Hide label
-					$newInput.hide();
-				} else {
-					// Show label
-					$newInput.show();
-				}
-			}, 20);
 			
 		}).blur(function() {
 			
-			clearInterval(interval);
+			if ($input.val() == '') $newInput.show();
 			$newInput.removeClass('defaultvalue_label_focus');
 			
-		});
+		});		
+		
 		
 		// Add new input (label input)
 		$input.before($newInput);
