@@ -45,6 +45,10 @@
 		$newInput.attr('tabindex','-1');
 		
 		
+		// Do not show label input if the input already has a value in it
+		if ($input.val() != '') $newInput.hide();
+		
+		
 		// When the user focuses on our label input
 		$newInput.focus(function() {
 			
