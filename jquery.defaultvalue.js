@@ -18,8 +18,6 @@
 		// Allow user to override default options
 		options = $.extend({}, defaults, options);
 		
-		console.log(options);
-		
 		// Hide the label
 		if ($label.length > 0 && options['hideLabel'] == true) $label.hide();
 		
