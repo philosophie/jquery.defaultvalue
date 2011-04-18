@@ -83,8 +83,13 @@
         if ($input.val() == '') $newInput.show();
         $newInput.removeClass('defaultvalue_label_focus');
         
-      });		
-      
+      });
+			
+			// Dev can change the value of this input programatically, but must call .change() on it after
+			// We pickup that change here and hide the label
+      $input.change(function() {
+				if ($input.val() != '') $newInput.hide();
+			});
       
       // Add new input (label input)
       $input.before($newInput);

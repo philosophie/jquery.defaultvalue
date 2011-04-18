@@ -9,4 +9,6 @@ $(function() {
 		clearOnFocus: true
 	});
 	
+	$('#myinput2').val('changed with js!').change();
+	
 });
