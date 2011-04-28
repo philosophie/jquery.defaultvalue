@@ -8,7 +8,7 @@
       var interval;
       
       // Find the label
-      $label = $("[for='" + $input.attr('id') + "']");
+      var $label = $("[for='" + $input.attr('id') + "']");
       
       
       // Default options
@@ -19,14 +19,14 @@
       };
       
       // Allow user to override default options
-      options = $.extend({}, defaults, options);
+      var options = $.extend({}, defaults, options);
       
       // Hide the label
       if ($label.length > 0 && options['hideLabel'] == true) $label.hide();
       
       
       // Wrap the input with a container div
-      $wrapper = $('<div></div>');
+      var $wrapper = $('<div></div>');
       $wrapper.css({
         'display': 'inline-block',
         'position': 'relative'
