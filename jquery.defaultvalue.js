@@ -1,6 +1,6 @@
 (function ($) {	
 	
-	$.fn.defaultValue = function (options) {
+	$.fn.defaultValue = function (set_options) {
 
     return $(this).each(function () {
 
@@ -8,7 +8,7 @@
       var interval;
       
       // Find the label
-      var $label = $("[for='" + $input.attr('id') + "']");
+      var $label = $("label[for='" + $input.attr('id') + "']");
       
       
       // Default options
@@ -19,7 +19,7 @@
       };
       
       // Allow user to override default options
-      var options = $.extend({}, defaults, options);
+      var options = $.extend({}, defaults, set_options);
       
       // Hide the label
       if ($label.length > 0 && options['hideLabel'] == true) $label.hide();
