@@ -42,7 +42,8 @@
         'z-index': '100',
         'background-color': 'transparent',
         'border-color': 'transparent',
-        'box-shadow': 'none'
+        'box-shadow': 'none',
+				'background-image': 'none'
       });
       $newInput.addClass('defaultvalue_label');
       $newInput.removeAttr('name').removeAttr('id');
