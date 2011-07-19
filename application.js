@@ -11,4 +11,11 @@ $(function() {
 	
 	$('#myinput2').val('changed with js!').change();
 	
+	setTimeout(function() {
+		// Chrome does not fire a change event when autofilling forms
+		// To prevent weird overlap with defaultValue and Chrome autofill,
+		// fire your own change event after 100 or so milliseconds
+		$('#myinput').change();
+	}, 100);
+	
 });
