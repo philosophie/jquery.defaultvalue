@@ -49,6 +49,11 @@
       $newInput.removeAttr('name').removeAttr('id');
       $newInput.val(options['labelText']);
       $newInput.attr('tabindex','-1');
+			
+			// If $newInput is a password field, change it to text so label is readable
+			if ($newInput.attr('type') == 'password') {
+				$newInput.attr('type', 'text');
+			}
       
       
       // Do not show label input if the input already has a value in it
