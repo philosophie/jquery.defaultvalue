@@ -2,13 +2,13 @@
 	
 	$.fn.defaultValue = function (set_options) {
 
-    return $(this).each(function () {
+    return jQuery(this).each(function () {
 
-      var $input = $(this);
+      var $input = jQuery(this);
       var interval;
       
       // Find the label
-      var $label = $("label[for='" + $input.attr('id') + "']");
+      var $label = jQuery("label[for='" + $input.attr('id') + "']");
       
       
       // Default options
@@ -32,7 +32,7 @@
 			} else {
       
 	      // Wrap the input with a container div
-	      var $wrapper = $('<div></div>');
+	      var $wrapper = jQuery('<div></div>');
 	      $wrapper.css({
 	        'display': 'inline-block',
 	        'position': 'relative'
