@@ -1,8 +1,6 @@
 $(function() {
 	
-	$('#myinput').defaultValue({
-		labelText: 'A label from options'
-	});
+	$('#myinput').defaultValue();
 	$('#myinput2').defaultValue({
 		labelText: 'Phone number',
 		hideLabel: false,
