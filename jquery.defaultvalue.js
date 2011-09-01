@@ -1,14 +1,14 @@
-(function (jQuery) {	
+(function ($) {	
 	
-	jQuery.fn.defaultValue = function (set_options) {
+	$.fn.defaultValue = function (set_options) {
 
-    return jQuery(this).each(function () {
+    return $(this).each(function () {
 
-      var $input = jQuery(this);
+      var $input = $(this);
       var interval;
       
       // Find the label
-      var $label = jQuery("label[for='" + $input.attr('id') + "']");
+      var $label = $("label[for='" + $input.attr('id') + "']");
       
       
       // Default options
@@ -20,7 +20,7 @@
       };
       
       // Allow user to override default options
-      var options = jQuery.extend({}, defaults, set_options);
+      var options = $.extend({}, defaults, set_options);
       
       // Hide the label
       if ($label.length > 0 && options['hideLabel'] == true) $label.hide();
@@ -32,7 +32,7 @@
 			} else {
       
 	      // Wrap the input with a container div
-	      var $wrapper = jQuery('<div></div>');
+	      var $wrapper = $('<div></div>');
 	      $wrapper.css({
 	        'display': 'inline-block',
 	        'position': 'relative'
