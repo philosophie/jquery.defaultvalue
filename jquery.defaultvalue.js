@@ -1,6 +1,6 @@
-(function ($) {	
+(function (jQuery) {	
 	
-	$.fn.defaultValue = function (set_options) {
+	jQuery.fn.defaultValue = function (set_options) {
 
     return jQuery(this).each(function () {
 
@@ -20,7 +20,7 @@
       };
       
       // Allow user to override default options
-      var options = $.extend({}, defaults, set_options);
+      var options = jQuery.extend({}, defaults, set_options);
       
       // Hide the label
       if ($label.length > 0 && options['hideLabel'] == true) $label.hide();
