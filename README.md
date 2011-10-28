@@ -6,12 +6,13 @@ A proper implementation of input placeholder text, or as I like to call them: de
 
 	$('#someTextInput').defaultValue();
 
-## Options
+## Options (and their defaults)
 
 	$('#someTextInput').defaultValue({
 		labelText: 'A label', // Set the text for the input's default value. By default it will find the corresponding label and use that value.
-		hideLabel: false, // Hide the input's corresponding label. Set to true by default.
-		clearOnFocus: true // Immediately remove the default value when user focuses element. Set to false by default.
+		hideLabel: true, // Hide the input's corresponding label
+		clearOnFocus: false, // Immediately remove the default value when user focuses element
+		preferPlaceholder: false // Use HTML5 placeholder is available in client browser
 	});
 
 ## CSS
