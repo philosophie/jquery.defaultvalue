@@ -69,10 +69,12 @@
       	
       	
 	      // When the user focuses on our label input
-	      $newInput.bind('focus click', function() {
+	      $newInput.bind('focus click', function(event) {
         	
 	        $newInput.addClass('defaultvalue_label_focus');
 	        $input.focus();
+	        
+	        event.preventDefault();
         	
 	      });
       	
