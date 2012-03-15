@@ -50,7 +50,8 @@
 	        'border-color': 'transparent',
 	        'box-shadow': 'none',
 					'background-image': 'none',
-					'resize': 'none'
+					'resize': 'none',
+					'width': $input.css('width')
 	      });
 	      $newInput.addClass('defaultvalue_label');
 	      $newInput.removeAttr('name').removeAttr('id');
